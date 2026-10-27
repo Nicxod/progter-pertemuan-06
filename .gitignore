@@ -1,0 +1,20 @@
+# Dependencies
+/laravel-docker/vendor/
+/laravel-docker/node_modules/
+
+# Environment files
+/laravel-docker/.env
+/laravel-docker/.env.backup
+/laravel-docker/.env.production
+
+# Cache & logs
+/laravel-docker/.phpunit.cache
+/laravel-docker/.phpunit.result.cache
+/laravel-docker/storage/*.key
+/laravel-docker/storage/logs/*.log
+/laravel-docker/public/hot
+/laravel-docker/public/storage
+
+# OS files
+.DS_Store
+Thumbs.db

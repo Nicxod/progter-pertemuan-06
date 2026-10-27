@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #0c0c0c;
+            color: #cccccc;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 24px;
+            margin: 0;
+        }
+        .window {
+            background: #1e1e1e;
+            border-radius: 8px;
+            border: 1px solid #333333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .titlebar {
+            background: #2d2d2d;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #3c3c3c;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .title {
+            color: #999999;
+            font-size: 13px;
+            margin-left: 8px;
+        }
+        .terminal {
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .prompt {
+            color: #5af78e;
+        }
+        .cmd {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .output {
+            color: #d1d5db;
+        }
+        .highlight {
+            color: #57c7ff;
+        }
+        .active {
+            color: #5af78e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Terminal 1: Docker PS -->
+    <div class="window">
+        <div class="titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="title">PowerShell - Docker Process Status (docker ps)</span>
+        </div>
+        <div class="terminal">
+<span class="prompt">PS C:\Users\Dominic\Semester 5\Progter\pert 6></span> <span class="cmd">docker ps</span>
+<span class="output">CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS                       PORTS                                         NAMES
+63f7f44beed4   <span class="highlight">laravel-app:1.0</span>      "/usr/local/bin/dock…"   1 minute ago     <span class="active">Up 1 minute</span>                  0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   <span class="active">laravel-container</span>
+1222a3c74820   <span class="highlight">web-sederhana:1.0</span>    "/docker-entrypoint.…"   1 minute ago     <span class="active">Up 1 minute</span>                  0.0.0.0:8080->80/tcp, [::]:8080->80/tcp       <span class="active">web-sederhana-container</span>
+dcfc85bdcd3a   postgres:16-alpine   "docker-entrypoint.s…"   2 weeks ago      Up 5 minutes (healthy)       0.0.0.0:5436->5432/tcp, [::]:5436->5432/tcp   cassavaflow_postgres
+457d5ddc1212   postgres:16-alpine   "docker-entrypoint.s…"   2 weeks ago      Up 5 minutes                 0.0.0.0:5435->5432/tcp, [::]:5435->5432/tcp   selotrace_postgres
+f8efaa483cc6   postgres:16-alpine   "docker-entrypoint.s…"   2 weeks ago      Up 5 minutes                 0.0.0.0:5434->5432/tcp, [::]:5434->5432/tcp   nuni_care_postgres</span>
+        </div>
+    </div>
+
+    <!-- Terminal 2: Docker Images -->
+    <div class="window">
+        <div class="titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="title">PowerShell - Docker Images List (docker images)</span>
+        </div>
+        <div class="terminal">
+<span class="prompt">PS C:\Users\Dominic\Semester 5\Progter\pert 6></span> <span class="cmd">docker images</span>
+<span class="output">REPOSITORY                                                  TAG         IMAGE ID       SIZE
+<span class="highlight">laravel-app</span>                                                 <span class="active">1.0</span>         <span class="active">d5e88c90205a</span>   <span class="active">929MB</span>
+<span class="highlight">web-sederhana</span>                                               <span class="active">1.0</span>         <span class="active">d64749949a56</span>   <span class="active">93.7MB</span>
+php                                                         8.2-cli     f7c6b9fc4b41   741MB
+terapana                                                    1.0         ffa80a0e953c   93.6MB
+postgres                                                    16-alpine   721873c34ceb   420MB
+rentify                                                     hf          a6a7848c3054   384MB
+rentify                                                     test        1225f644928a   1.04GB
+porsi-mbg-estimator                                         hf          8757d825f995   2.78GB
+capstoneproject02-advancedwebprogramming-frontend-laravel   latest      e395a3f5ad5b   1.03GB
+capstoneproject02-advancedwebprogramming-backend-node       latest      2240267c9629   271MB
+mongo                                                       latest      d6566e93e6a9   1.3GB
+hello-world                                                 latest      5e2309035332   25.9kB</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Docker - Dominic Xaviera (2472011)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <span class="course-name">Pemrograman Terapan</span>
+                    <span class="nav-divider">/</span>
+                    <span class="modul-title">Pertemuan 6 &bull; Docker</span>
+                </div>
+                <div class="nav-student">
+                    <span class="student-name">Dominic Xaviera</span>
+                    <span class="student-nrp">NRP: 2472011</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="page-intro">
+                <div class="status-badge">
+                    <span class="badge-dot"></span>
+                    <span>Container Aktif (Port 8080:80)</span>
+                </div>
+                <h1 class="page-heading">Aplikasi Web Sederhana dalam Docker</h1>
+                <p class="page-subheading">Implementasi deployment web server Nginx Alpine di dalam container terisolasi untuk tugas praktikum.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card">
+                    <div class="card-caption">Web Server</div>
+                    <div class="card-main-val">Nginx Alpine</div>
+                    <div class="card-note">Image: <code>nginx:alpine</code> (~26MB)</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-caption">Port Mapping</div>
+                    <div class="card-main-val font-mono">8080 &rarr; 80</div>
+                    <div class="card-note">Host port forwarding aktif</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-caption">Status Eksekusi</div>
+                    <div class="card-main-val text-success">Berhasil (200 OK)</div>
+                    <div class="card-note">Web server merespons normal</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-caption">Waktu Klien</div>
+                    <div class="card-main-val font-mono" id="live-clock">--:--:--</div>
+                    <div class="card-note">Sinkronisasi waktu lokal</div>
+                </div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="section-box">
+                    <div class="box-header">
+                        <h2>Informasi Container & Lingkungan</h2>
+                    </div>
+                    <table class="data-table">
+                        <tbody>
+                            <tr>
+                                <td class="col-label">Nama Mahasiswa</td>
+                                <td class="col-value"><strong>Dominic Xaviera</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-label">NRP</td>
+                                <td class="col-value"><span class="badge-nrp">2472011</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-label">Nama Container</td>
+                                <td class="col-value font-mono">web-sederhana-container</td>
+                            </tr>
+                            <tr>
+                                <td class="col-label">Docker Image Tag</td>
+                                <td class="col-value font-mono">web-sederhana:1.0</td>
+                            </tr>
+                            <tr>
+                                <td class="col-label">Sistem Operasi Dasar</td>
+                                <td class="col-value">Alpine Linux 3.20</td>
+                            </tr>
+                            <tr>
+                                <td class="col-label">Direktori Web Nginx</td>
+                                <td class="col-value font-mono">/usr/share/nginx/html</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-box">
+                    <div class="box-header">
+                        <h2>Pengujian Interaktivitas Halaman</h2>
+                    </div>
+                    <div class="interactive-body">
+                        <p class="interactive-desc">Klik tombol di bawah untuk memverifikasi eksekusi JavaScript pada container web ini:</p>
+                        
+                        <div class="counter-box">
+                            <span class="counter-number" id="click-count">0</span>
+                            <span class="counter-label">Jumlah Klik Terverifikasi</span>
+                        </div>
+
+                        <div class="btn-row">
+                            <button class="btn btn-primary" id="btn-click">Tambah Klik (+1)</button>
+                            <button class="btn btn-secondary" id="btn-reset">Reset</button>
+                        </div>
+
+                        <div class="test-note" id="test-log">
+                            Status: Siap menerima input interaksi.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div>Praktikum Pemrograman Terapan &bull; Pertemuan 6</div>
+                <div>Mahasiswa: <strong>Dominic Xaviera</strong> (NRP: <strong>2472011</strong>)</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
